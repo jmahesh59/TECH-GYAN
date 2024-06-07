@@ -13,6 +13,9 @@ export default function CommentSection({ postId }) {
   const [showModal, setShowModal] = useState(false);
   const [commentToDelete, setCommentToDelete] = useState(null);
   const navigate = useNavigate();
+  
+  
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (comment.length > 200) {
@@ -30,7 +33,8 @@ export default function CommentSection({ postId }) {
           userId: currentUser._id,
         }),
       });
-      const data = await res.json();
+      
+    const data = await res.json();
       if (res.ok) {
         setComment('');
         setCommentError(null);
